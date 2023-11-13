@@ -4,6 +4,8 @@ CREATE TABLE aluno(
 	nome varchar(100) not null,
     matricula int not null,
     curso varchar(100) not null,
+	login varchar(20),
+	senha varchar(20),
     PRIMARY KEY (id)
 );
 INSERT INTO aluno(id, nome, matricula, curso) VALUES(01, 'Eduarda Rosseto', 159951, 'Sistemas para internet');
@@ -13,6 +15,8 @@ DROP TABLE professor;
 CREATE TABLE professor(
     id int unsigned not null auto_increment,
     nome varchar(100) not null,
+	login varchar(20),
+	senha varchar(20),
     PRIMARY KEY (id)
 );
 INSERT INTO professor(id, nome) VALUES(11, 'Angelito Rodrigues');
@@ -57,3 +61,11 @@ SELECT * FROM professor;
 SELECT * FROM disciplina;
 SELECT * FROM turma;
 SELECT * FROM inscricoes;
+
+ALTER TABLE aluno
+ADD login varchar(20),
+ADD senha varchar(20);
+
+ALTER TABLE professor
+ADD login varchar(20),
+ADD senha varchar(20);

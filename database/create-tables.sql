@@ -3,12 +3,16 @@ CREATE TABLE aluno(
 	nome varchar(100) not null,
     matricula int not null,
     curso varchar(100) not null,
+	login varchar(20) not null,
+	senha varchar(20) not null,
     PRIMARY KEY (id)
 );
 
 CREATE TABLE professor(
     id int unsigned not null auto_increment,
     nome varchar(100) not null,
+	login varchar(20) not null,
+	senha varchar(20) not null,
     PRIMARY KEY (id)
 );
 
