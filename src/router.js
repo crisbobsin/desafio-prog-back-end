@@ -1,11 +1,14 @@
 const express = require('express');
 const alunoController = require('./controllers/alunoController');
+const disciplinaController = require('./controllers/disciplinaController');
 
 const router = express.Router();
 
 // --------------------------------------------------------------------------------------------//
 
 router.get('/aluno', alunoController.getAll);
+
+router.post('/add-disciplina', disciplinaController.add);
 
 /* router.post('/add-turma', function(req, res){
     nova_turma = {
