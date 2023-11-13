@@ -6,14 +6,14 @@
 ```
 git clone https://github.com/crisbobsin/desafio-prog-back-end.git
 ```
-1. Update dependencies
+2. Update dependencies
 ```
 npm install
 ```
-1. Start DB server
-2. Configure DB schema
-3. Create .env file
-4. Start application (with nodemon):
+3. Start DB server
+4. Configure DB schema
+5. Create .env file
+6. Start application (with nodemon):
 ```
 npm run dev
 ```
