@@ -1,0 +1,14 @@
+const db = require('./dbconnection');
+
+var Disciplinas = {
+
+    add: (disciplina, callback) => {
+
+        db.query("INSERT INTO disciplina (id, nome) VALUES (?,?)",
+            [ disciplina.id, disciplina.nome ], 
+            callback);
+    }
+
+};
+
+module.exports = Disciplinas;
