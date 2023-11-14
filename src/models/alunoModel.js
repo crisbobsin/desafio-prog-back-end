@@ -1,13 +1,15 @@
 const db = require('./dbconnection');
 
+/* A função é assíncrona para utilizarmos o await, pois há a
+necessidade de aguardar o processamento da consulta. */
+const aluno = {
 
-const getInfos = async () => {
-    const perfil = await db.execute('SELECT * FROM aluno');
-    /* A função é assíncrona para utilizarmos o await, pois há a
-    necessidade de aguardar o processamento da consulta. */
-    return perfil;
-};
+    getProfile: async (aluno, _callback) => {
 
-module.exports = {
-    getInfos
-};
+        return db.query('SELECT * FROM aluno WHERE id=(?)', [aluno]);
+        
+    }
+
+}
+
+module.exports = aluno;

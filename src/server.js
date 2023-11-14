@@ -3,7 +3,7 @@ const dotenv = require('dotenv')
 
 dotenv.config()
 
-const host = '127.0.0.1';
+const host = 'localhost';
 const port = process.env.PORT;
 
 app.listen(port, host, () => {

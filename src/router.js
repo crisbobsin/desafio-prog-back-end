@@ -7,7 +7,7 @@ const router = express.Router();
 
 // --------------------------------------------------------------------------------------------//
 
-router.get('/aluno', alunoController.getAll);
+router.get('/aluno/:id', alunoController.getAll);
 
 router.get('/inscricoes', inscricoesController.getInscricoesByAluno);
 
