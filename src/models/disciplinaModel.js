@@ -14,7 +14,7 @@ var Disciplinas = {
     },
     del: (id, callback) => {
         console.log('passou aqui');
-        db.query("DELETE FROM disciplina WHERE id = ?",
+        db.query("DELETE FROM disciplina WHERE id = (?)",
             [ id ], 
             callback);
     }
