@@ -7,7 +7,9 @@ const router = express.Router();
 
 // --------------------------------------------------------------------------------------------//
 
-router.get('/aluno/:id', alunoController.getAll);
+router.get('/aluno/:id', alunoController.getProfile);
+router.post('/criar-aluno', alunoController.createStudent);
+router.get('/turma-aluno/:id', alunoController.checkClasses)
 
 router.get('/inscricoes', inscricoesController.getInscricoesByAluno);
 
