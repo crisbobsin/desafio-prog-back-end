@@ -9,8 +9,8 @@ const router = express.Router();
 // --------------------------------------------------------------------------------------------//
 
 router.get('/aluno/', loginController.verifyJwt, alunoController.getProfile);
-router.post('/criar-aluno', alunoController.createStudent);
-router.post('/turma-aluno/:id', alunoController.checkClasses)
+router.post('/criar-aluno', loginController.verifyJwt, alunoController.createStudent);
+router.post('/turma-aluno', loginController.verifyJwt,  alunoController.checkClasses)
 
 router.post('/login', loginController.login)
 
