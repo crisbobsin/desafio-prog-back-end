@@ -2,14 +2,17 @@ const express = require('express');
 const alunoController = require('./controllers/alunoController');
 const disciplinaController = require('./controllers/disciplinaController');
 const inscricoesController = require('./controllers/inscricoesController');
+const loginController = require('./controllers/loginController');
 
 const router = express.Router();
 
 // --------------------------------------------------------------------------------------------//
 
-router.get('/aluno/:id', alunoController.getProfile);
+router.get('/aluno/', loginController.verifyJwt, alunoController.getProfile);
 router.post('/criar-aluno', alunoController.createStudent);
-router.get('/turma-aluno/:id', alunoController.checkClasses)
+router.post('/turma-aluno/:id', alunoController.checkClasses)
+
+router.post('/login', loginController.login)
 
 router.get('/inscricoes', inscricoesController.getInscricoesByAluno);
 
