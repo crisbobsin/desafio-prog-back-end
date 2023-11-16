@@ -4,7 +4,9 @@ const alunoModel = require('../models/alunoModel');
 A função sempre deve conter um 'request' e um 'response'.*/
 const getProfile = async (req, res) => {
     
-    const student_id = req.params.id;
+    console.log(req.userId + ' Fez essa chamda!');
+
+    const student_id = req.userId;
 
     const profile = await alunoModel.getProfile(student_id);
 

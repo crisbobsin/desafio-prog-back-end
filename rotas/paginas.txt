@@ -1,16 +1,16 @@
 - Aluno
 	- Login
-	- Criação de perfil
+	- Criação de perfil (Apenas Admin)
 	- Visualização de perfil
-	- Ver turmas e matrérias em que está matriculado	
+	- Ver turmas e matrérias em que está matriculado
 	- Remover inscrições em turmas
 
-- Professores
+- Professores (Admin)
 	- Criação de professor (Apenas Admin)
 	- Visualização de perfil
-	- Criação de turmas
-	- Deletar turmas
-	- Alterar turmas
+	- Criação de turmas (Apenas Admin)
+	- Deletar turmas (Apenas Admin)
+	- Alterar turmas (Apenas Admin)
 
 - Inscrições
 	- Aluno logado deve se inscrever em uma turma
