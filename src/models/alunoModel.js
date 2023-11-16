@@ -5,9 +5,9 @@ necessidade de aguardar o processamento da consulta. */
 const aluno = {
 
     // Retorna um Json contendo as informações do perfil do aluno
-    getProfile: async (student_id, _callback) => {
+    getProfile: async (user_id, _callback) => {
 
-        return await db.query('SELECT aluno.nome, aluno.matricula, aluno.curso, aluno.login FROM aluno WHERE id=(?)', [student_id]);
+        return await db.query('SELECT aluno.nome, aluno.matricula, aluno.curso, aluno.login FROM aluno WHERE id=(?)', [user_id]);
         
     },
 
@@ -15,16 +15,16 @@ const aluno = {
         
         const query = 'INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES (?,?,?,?,?)'
         const values = [aluno.nome, aluno.matricula, aluno.curso, aluno.login, aluno.senha]
-        
+    
         db.query(query, values);
 
     },
 
-    checkClasses: async (student_id, _callback) => {
+    checkClasses: async (user_id, _callback) => {
         
         const turma_inscrita = await db.query(
             'SELECT numero_turma FROM inscricoes WHERE id_aluno = (?)',
-            [student_id]
+            [user_id]
         )[0];
         const id_disciplina_inscrita = await db.query(
             'SELECT id_disciplina FROM turma WHERE numero_turma = (?)',
@@ -39,7 +39,7 @@ const aluno = {
 
         return await db.query(
             'SELECT numero_turma FROM inscricoes WHERE id_aluno = (?)',
-            [student_id]
+            [user_id]
         )[0];
 
     }
