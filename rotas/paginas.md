@@ -1,12 +1,22 @@
 - Aluno
 
+| Descrição                                     | Método | Rota                | Body |
+| --------------------------------------------- | ------ | ------------------- | ---- |
+| Criação de perfil (Apenas Admin)              | POST   | /criar-aluno        |      |
+| Ver turmas e matérias em que está matriculado | GET    | /turmas             |      |
+| Remover inscrições em turmas 				    | DELETE | /cancelar-inscricao |      |
+
+- Perfil
+
+| Descrição                                     | Método | Rota       | Body |
+| --------------------------------------------- | ------ | ---------- | ---- |
+| Visualização de perfil                        | GET    | /perfil    |      |
+
+- Login
+
 | Descrição                                     | Método | Rota       | Body |
 | --------------------------------------------- | ------ | ---------- | ---- |
 | Login                                         | POST   | /login     |      |
-| Criação de perfil                             | POST   | /perfil    |      |
-| Visualização de perfil                        | GET    | /perfil    |      |
-| Ver turmas e matérias em que está matriculado | GET    | /inscricao |      |
-| Remover inscrições em turmas 				    | DELETE | /inscricao |      |
 
 - Professores
 

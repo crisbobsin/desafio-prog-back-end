@@ -21,16 +21,6 @@ const createStudent = async (req, res) => {
 
 };
 
-const checkClasses = async (req, res) => {
-
-    const user_id = req.userId;
-
-    const classes_infos = await alunoModel.checkClasses(user_id);
-
-    return res.status(200).json(classes_infos)
-
-};
-
 const unsubscribeClass = async (req, res) => {
 
     const user_id = req.userId;
@@ -44,6 +34,5 @@ const unsubscribeClass = async (req, res) => {
 
 module.exports = {
     createStudent,
-    checkClasses,
     unsubscribeClass
 };

@@ -17,28 +17,6 @@ const aluno = {
 
         db.query('DELETE FROM inscricoes WHERE id_aluno = (?) AND numero_turma = (?)', [user_id, class_num])
     
-    },
-
-    // Incompleto
-    checkClasses: async (user_id, _callback) => {
-    
-        const query = `
-            SELECT t.numero_turma, d.nome 
-            AS disciplina 
-            FROM aluno a 
-            JOIN inscricoes i 
-            ON a.id = i.id_aluno 
-            JOIN turma t 
-            ON i.numero_turma = t.numero_turma 
-            JOIN disciplina d 
-            ON t.id_disciplina = d.id 
-            WHERE a.id = (?);
-        `
-
-        const queryResult = await db.query(query, [user_id])
-        
-        return queryResult[0][0];
-
     }
 
 }
