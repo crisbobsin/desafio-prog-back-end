@@ -24,6 +24,7 @@ const loginManager = {
             return null;
         }
     }
+    
 };
 
 module.exports = loginManager;

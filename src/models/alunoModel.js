@@ -4,13 +4,6 @@ const db = require('./dbconnection');
 necessidade de aguardar o processamento da consulta. */
 const aluno = {
 
-    // Retorna um Json contendo as informações do perfil do aluno
-    getProfile: async (user_id, _callback) => {
-
-        return await db.query('SELECT aluno.nome, aluno.matricula, aluno.curso, aluno.login FROM aluno WHERE id=(?)', [user_id]);
-        
-    },
-
     createStudent: (aluno, _callback) => {
         
         const query = 'INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES (?,?,?,?,?)'
@@ -20,27 +13,31 @@ const aluno = {
 
     },
 
-    checkClasses: async (user_id, _callback) => {
-        
-        const turma_inscrita = await db.query(
-            'SELECT numero_turma FROM inscricoes WHERE id_aluno = (?)',
-            [user_id]
-        )[0];
-        const id_disciplina_inscrita = await db.query(
-            'SELECT id_disciplina FROM turma WHERE numero_turma = (?)',
-            [turma_inscrita]
-        )[0];
-        const disciplina_inscrita = await db.query(
-            'SELECT nome FROM disciplina WHERE id = (?)',
-            [id_disciplina_inscrita]
-        )[0];
-        
-        console.log(turma_inscrita, id_disciplina_inscrita, disciplina_inscrita)
+    unsubscribeClass: async (user_id, class_num, _callback) => {
 
-        return await db.query(
-            'SELECT numero_turma FROM inscricoes WHERE id_aluno = (?)',
-            [user_id]
-        )[0];
+        db.query('DELETE FROM inscricoes WHERE id_aluno = (?) AND numero_turma = (?)', [user_id, class_num])
+    
+    },
+
+    // Incompleto
+    checkClasses: async (user_id, _callback) => {
+    
+        const query = `
+            SELECT t.numero_turma, d.nome 
+            AS disciplina 
+            FROM aluno a 
+            JOIN inscricoes i 
+            ON a.id = i.id_aluno 
+            JOIN turma t 
+            ON i.numero_turma = t.numero_turma 
+            JOIN disciplina d 
+            ON t.id_disciplina = d.id 
+            WHERE a.id = (?);
+        `
+
+        const queryResult = await db.query(query, [user_id])
+        
+        return queryResult[0][0];
 
     }
 
