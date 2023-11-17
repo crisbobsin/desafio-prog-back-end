@@ -1,3 +1,5 @@
+/* Utilizamos a o módulo mysql do node para realizar a conexão com o banco de dados. */
+
 const mysql = require('mysql2/promise');
 const dotenv = require('dotenv')
 

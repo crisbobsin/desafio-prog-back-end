@@ -1,5 +1,6 @@
 const profileModel = require('../models/profileModel')
 
+/* Função que chama o getProfile para receber o objeto do perfil do usuário logado. */
 const getProfile = async (req, res) => {
 
     const user_id = req.userId;
