@@ -4,7 +4,7 @@
 | --------------------------------------------- | ------ | ------------------- | ---- |
 | Criação de perfil (Apenas Admin)              | POST   | /criar-aluno        |      |
 | Ver turmas e matérias em que está matriculado | GET    | /turmas             |      |
-| Remover inscrições em turmas 				    | DELETE | /cancelar-inscricao |      |
+
 
 - Perfil
 
@@ -23,16 +23,17 @@
 | Descrição                           | Método | Rota       | Body |
 | ----------------------------------- | ------ | ---------- | ---- |
 | Criação de professor (Apenas Admin) | POST   | /professor |      |
-| Visualização de perfil              | GET    | /professor |      |
 | Criação de turmas                   | POST   | /turma     |      |
 | Deletar turmas                      | DELETE | /turma     |      |
 | Alterar turmas                      | PUT    | /turma     |      |
+| Acessar a turma e ver informações   | GET    | /inscricao |      |
 
 - Inscrições
 
-| Descrição                                   | Método | Rota       | Body |
-| ------------------------------------------- | ------ | ---------- | ---- |
-| Aluno logado deve se inscrever em uma turma | POST   | /inscricao |      |
+| Descrição                                   | Método | Rota                | Body |
+| ------------------------------------------- | ------ | ------------------- | ---- |
+| Aluno logado deve se inscrever em uma turma | POST   | /inscricao          |      |
+| Remover inscrições em turmas 				  | DELETE | /cancelar-inscricao |      |
 
 - Disciplinas
 
@@ -40,9 +41,3 @@
 | ------------------------------------------- | ------ | ----------- | ---- |
 | Ver as disciplinas                          | POST   | /disciplina |      |
 | Ver as turmas de cada disciplina            | GET    | /turma      |      |
-
-- Turma
-
-| Descrição                                   | Método | Rota       | Body |
-| ------------------------------------------- | ------ | ---------- | ---- |
-| Acessar a turma e ver informações           | GET    | /inscricao |      |
