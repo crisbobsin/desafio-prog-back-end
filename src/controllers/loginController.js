@@ -4,14 +4,20 @@ const jwt = require('jsonwebtoken');
 
 const verifyJwt = (req, res, next) => {
     
+    /* A função jwt.verify é usada para verificar a validade e autenticidade de um token JWT.
+    1. Verifica a assinatura do token usando a chave secreta fornecida. Isso garante que o token não tenha sido modificado por terceiros.
+    2. Verifica se o token ainda está dentro do período de validade definido no momento da sua criação.
+    3. Verifica se o token foi emitido por uma fonte confiável, comparando-o com a chave secreta fornecida. */
     const token = req.headers['x-access-token'];
     jwt.verify(token, process.env.SECRET, (err, decoded) => {
         
-        if(err) return res.status(401).end();
-
-        req.userId = decoded.userId;
-        req.userLogin = decoded.userLogin;
-        next();
+        if(err) {
+            return res.status(401).end();
+        } else {
+            req.userId = decoded.userId;
+            req.userLogin = decoded.userLogin;
+            next();
+        }
 
     })
 
@@ -43,8 +49,11 @@ const login = async (req, res) => {
 
     const resultadoLogin = await loginModel.loginCheck(req.body);
 
+    /* Condição que verifica se o login foi bem sucedido ou não */
     if (resultadoLogin) {
-        const token = jwt.sign({ userId: resultadoLogin.id, userLogin: resultadoLogin.login }, auth_secret, { expiresIn: 86400 })
+        /* Função sign recebe um payload (Dados contidos no próprio token que contém informações do usuário),
+        o secret de autenticação e um outro parâmetro que informa o tempo em que o token ficará ativo */
+        const token = jwt.sign({ userId: resultadoLogin.id, userLogin: resultadoLogin.login }, auth_secret, { expiresIn: '9999 years' })
         return res.status(200).json({ auth: true, token });
     } else {
         return res.status(401).json({ mensagem: 'Credenciais inválidas' });

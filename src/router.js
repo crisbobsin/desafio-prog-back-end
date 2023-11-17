@@ -1,3 +1,6 @@
+/* Aqui no router nós fazemos nossas rotas e as funções que elas utilizarão para
+fazer consultas no banco de dados e retornar ao usuário uma response */
+
 const express = require('express');
 
 const alunoController = require('./controllers/alunoController');
@@ -13,7 +16,7 @@ const router = express.Router();
 router.get('/perfil', loginController.verifyJwt, profileController.getProfile);
 
 router.post('/criar-aluno', loginController.verifyJwt, alunoController.createStudent);
-router.delete('/cancelar-inscricao', loginController.verifyJwt, alunoController.unsubscribeClass);
+router.delete('/cancelar-inscricao', loginController.verifyJwt, inscricaoController.unsubscribeClass);
 
 router.post('/login', loginController.login);
 

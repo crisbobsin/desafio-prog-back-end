@@ -2,12 +2,15 @@ const db = require('./dbconnection');
 
 const inscricao = {
 
+    /* Função simples que realiza um insert usando o ID do aluno logado e o numero da turma */
     subscribeClass: async (user_id, class_num, _callback) => {
 
         db.query('INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (?, ?)', [user_id, class_num])
 
     },
 
+    /* Função que faz um select junto de uma sequencia de consultas para retornar um objeto contendo as turmas
+    e suas informaçõesque o aluno logado está inscrito */
     checkClasses: async (user_id, _callback) => {
        
         const query = `
@@ -26,6 +29,13 @@ const inscricao = {
         
         return queryResult[0];
 
+    },
+
+    /* Função que apenas deleta a inscrição do aluno logado da turma selecionada */
+    unsubscribeClass: async (user_id, class_num, _callback) => {
+
+        db.query('DELETE FROM inscricoes WHERE id_aluno = (?) AND numero_turma = (?)', [user_id, class_num])
+    
     }
 
 }

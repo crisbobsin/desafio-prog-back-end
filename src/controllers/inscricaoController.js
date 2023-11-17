@@ -1,5 +1,7 @@
 const inscricaoModel = require('../models/inscricaoModel')
 
+/* Função que chama a função de checar as turmas do modelo inscrição, retornando um
+array com objetos das turmas inscritas */
 const checkClasses = async (req, res) => {
 
     const user_id = req.userId;
@@ -10,6 +12,9 @@ const checkClasses = async (req, res) => {
 
 };
 
+/* Função responsável por chamar a função de inscrição do modelo de inscrição,
+Na sequencia chamando a função para retornar as turmas inscritas, assim possibilitando
+o aluno logado chegar se a inscrição foi bem sucedida */
 const subscribeClass = async (req, res) => {
 
     const user_id = req.userId;
@@ -19,9 +24,24 @@ const subscribeClass = async (req, res) => {
 
     await checkClasses(req, res)
 
+};
+
+/* Função responsável por chamar a função de cancelar inscrição do modelo de inscrição,
+Na sequencia chamando a função para retornar as turmas inscritas, assim possibilitando
+o aluno logado chegar se a remoção foi bem sucedida */
+const unsubscribeClass = async (req, res) => {
+
+    const user_id = req.userId;
+    const class_number = req.body.numero_turma
+
+    inscricaoModel.unsubscribeClass(user_id, class_number);
+
+    await checkClasses(req, res)
+
 }
 
 module.exports = {
     checkClasses,
-    subscribeClass
+    subscribeClass,
+    unsubscribeClass
 }

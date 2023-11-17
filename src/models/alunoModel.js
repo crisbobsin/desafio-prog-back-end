@@ -4,6 +4,7 @@ const db = require('./dbconnection');
 necessidade de aguardar o processamento da consulta. */
 const aluno = {
 
+    /* Função criada para criar um novo aluno no banco de dados. o parametro aluno é um body com as informações a serem trabalhadas. */
     createStudent: (aluno, _callback) => {
         
         const query = 'INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES (?,?,?,?,?)'
@@ -12,12 +13,6 @@ const aluno = {
         db.query(query, values);
 
     },
-
-    unsubscribeClass: async (user_id, class_num, _callback) => {
-
-        db.query('DELETE FROM inscricoes WHERE id_aluno = (?) AND numero_turma = (?)', [user_id, class_num])
-    
-    }
 
 }
 
