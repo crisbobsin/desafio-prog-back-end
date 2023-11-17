@@ -25,7 +25,7 @@ const verifyAdmin = async (user_id, user_login) => {
 
     // Verifica se o professor tem permissões de ADM
     try {
-        if ( checkAdmin[0][0]['admin'] == 1) {
+        if (checkAdmin[0][0]['admin'] == 1) {
             return true
         } else {
             return false
@@ -44,7 +44,7 @@ const login = async (req, res) => {
     const resultadoLogin = await loginModel.loginCheck(req.body);
 
     if (resultadoLogin) {
-        const token = jwt.sign({ userId: resultadoLogin.id, userLogin: resultadoLogin.login }, auth_secret, { expiresIn: 600 })
+        const token = jwt.sign({ userId: resultadoLogin.id, userLogin: resultadoLogin.login }, auth_secret, { expiresIn: 86400 })
         return res.status(200).json({ auth: true, token });
     } else {
         return res.status(401).json({ mensagem: 'Credenciais inválidas' });
