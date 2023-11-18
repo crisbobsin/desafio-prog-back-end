@@ -8,6 +8,7 @@ const disciplinaController = require('./controllers/disciplinaController');
 const profileController = require('./controllers/profileController');
 const loginController = require('./controllers/loginController');
 const inscricaoController = require('./controllers/inscricaoController');
+const turmaController = require('./controllers/turmaController');
 
 const router = express.Router();
 
@@ -20,7 +21,7 @@ router.delete('/cancelar-inscricao', loginController.verifyJwt, inscricaoControl
 
 router.post('/login', loginController.login);
 
-router.get('/turmas', loginController.verifyJwt,  inscricaoController.checkClasses);
+router.get('/turmas', loginController.verifyJwt,  turmaController.checkClasses);
 router.post('/inscrever', loginController.verifyJwt, inscricaoController.subscribeClass);
 
 router.get('/disciplina', disciplinaController.getAll);
