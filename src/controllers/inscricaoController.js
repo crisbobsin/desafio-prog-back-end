@@ -7,10 +7,10 @@ o aluno logado chegar se a inscrição foi bem sucedida */
 const subscribeClass = async (req, res) => {
 
     const user_id = req.userId;
-    const user_registration = req.userRegistration;
+    const user_login = req.userLogin;
     const class_num = req.body.numero_turma;
 
-    await inscricaoModel.subscribeClass(user_id, user_registration, class_num);
+    await inscricaoModel.subscribeClass(user_id, user_login, class_num);
 
     turmaController. checkClasses(req, res)
 
@@ -22,10 +22,10 @@ o aluno logado chegar se a remoção foi bem sucedida */
 const unsubscribeClass = async (req, res) => {
 
     const user_id = req.userId;
-    const user_registration = req.userRegistration;
+    const user_login = req.userLogin;
     const class_number = req.body.numero_turma
 
-    await inscricaoModel.unsubscribeClass(user_id, user_registration, class_number);
+    await inscricaoModel.unsubscribeClass(user_id, user_login, class_number);
 
     turmaController.checkClasses(req, res)
 

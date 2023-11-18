@@ -4,9 +4,9 @@ const Turmas = {
 
     /* Função que faz um select junto de uma sequencia de consultas para retornar um objeto contendo as turmas
     e suas informaçõesque o aluno logado está inscrito */
-    checkClasses: async (user_id, user_login, user_registration, _callback) => {
+    checkClasses: async (user_id, user_login, _callback) => {
         
-        const isStudent = await db.query('SELECT * FROM aluno WHERE matricula = (?)', [user_registration]);
+        const isStudent = await db.query('SELECT * FROM aluno WHERE id = (?) AND login = (?)', [user_id, user_login]);
         const isProfessor = await db.query('SELECT * FROM professor WHERE id = (?) AND login = (?)', [user_id, user_login]);
 
         if (isStudent[0].length > 0) {
