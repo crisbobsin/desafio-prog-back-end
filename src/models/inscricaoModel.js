@@ -6,9 +6,17 @@ const inscricao = {
     subscribeClass: async (user_id, user_login, class_num, _callback) => {
 
         const isStudent = await db.query('SELECT * FROM aluno WHERE id = (?) AND login = (?)', [user_id, user_login]);
+        
         if (isStudent[0].length > 0) {
-            console.log('Inscrição realizada.')
-            await db.query('INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (?, ?)', [user_id, class_num])
+            
+            const isSubscribed = await db.query('SELECT * FROM inscricoes WHERE id_aluno = (?) AND numero_turma = (?)', [user_id, class_num]);
+
+            if(isSubscribed[0].length > 0)
+                console.log('Aluno já está inscrito na turma ' + class_num);
+            else {
+                console.log('Inscrição realizada.')
+                await db.query('INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (?, ?)', [user_id, class_num])
+            }
         } else {
             console.log('É necessário ser aluno para se inscrever em uma turma')
         }
