@@ -14,20 +14,21 @@ const router = express.Router();
 
 // --------------------------------------------------------------------------------------------//
 
+router.post('/login', loginController.login);
+
 router.get('/perfil', loginController.verifyJwt, profileController.getProfile);
 
 router.post('/criar-aluno', loginController.verifyJwt, alunoController.createStudent);
-router.delete('/cancelar-inscricao', loginController.verifyJwt, inscricaoController.unsubscribeClass);
 
-router.post('/login', loginController.login);
-
-router.get('/turmas', loginController.verifyJwt,  turmaController.checkClasses);
 router.post('/inscrever', loginController.verifyJwt, inscricaoController.subscribeClass);
+router.delete('/cancelar-inscricao', loginController.verifyJwt, inscricaoController.unsubscribeClass);
 
 router.get('/ver-disciplinas', loginController.verifyJwt, disciplinaController.getAll);
 router.post('/criar-disciplina', loginController.verifyJwt, disciplinaController.addSingle);
 router.delete('/cancelar-disciplina', loginController.verifyJwt, disciplinaController.deleteSingle);
 
+router.get('/turmas', loginController.verifyJwt,  turmaController.checkClasses);
+router.delete('/deletar-turma', loginController.verifyJwt, turmaController.deleteClass)
 router.post('/atualizar-turno-turma', loginController.verifyJwt, turmaController.updateSchedule);
 router.post('/atualizar-professor-turma', loginController.verifyJwt, turmaController.updateProfessor);
 
