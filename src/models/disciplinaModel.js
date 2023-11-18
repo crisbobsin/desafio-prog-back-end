@@ -13,7 +13,6 @@ var Disciplinas = {
         return db.query('SELECT * FROM disciplina');
     },
     del: (id, callback) => {
-        console.log('passou aqui');
         db.query("DELETE FROM disciplina WHERE id = (?)",
             [ id ], 
             callback);

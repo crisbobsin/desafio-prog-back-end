@@ -1,6 +1,6 @@
-const db = require('./dbconnection')
+const db = require('./dbconnection');
 
-const turma = {
+var Turmas = {
 
     /* Função que faz um select junto de uma sequencia de consultas para retornar um objeto contendo as turmas
     e suas informaçõesque o aluno logado está inscrito */
@@ -22,8 +22,20 @@ const turma = {
         
         return await queryResult[0];
 
+    },
+
+    updateSchedule: (turma) => {
+
+        db.query("UPDATE turma SET turno = ? WHERE numero_turma = ?",
+            [ turma.turno, turma.numero_turma ]);
+    },
+
+    updateProfessor: (turma) => {
+
+        db.query("UPDATE turma SET id_professor = ? WHERE numero_turma = ?",
+            [ turma.id_professor, turma.numero_turma ]);
     }
 
 }
 
-module.exports = turma;
+module.exports = Turmas;
