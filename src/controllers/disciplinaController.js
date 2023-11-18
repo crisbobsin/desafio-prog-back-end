@@ -27,11 +27,23 @@ const deleteSingle = async (req, res) => {
     const checkAdmin = await loginController.verifyAdmin(user_id, user_login);
 
     if(checkAdmin){
-        disciplinaModel.del(req.query.id);
-        return res.status(200).json({ message: "ok"});
+        
+        const result = await disciplinaModel.del(req.body.id);
+
+        if(result){
+            console.log("Deletado.");
+            return res.status(200).json({ message: "ok"});
+        } else {
+            return res.status(200).json({ message: `Não foi possível deletar a disciplina ${req.body.id} pois há turmas associadas` });
+        }
+
     } else {
         return res.status(401).json({ message: 'Apenas Admins podem deletar uma disciplina' })
     }
+
+
+
+    
 };
 
 module.exports = { 
