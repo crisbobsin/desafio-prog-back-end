@@ -7,9 +7,8 @@ const checkClasses = async (req, res) => {
 
     const user_id = req.userId;
     const user_login = req.userLogin;
-    const user_registration = req.userRegistration;
 
-    const classes_infos = await turmaModel.checkClasses(user_id, user_login, user_registration);
+    const classes_infos = await turmaModel.checkClasses(user_id, user_login);
 
     return res.status(200).json(classes_infos)
 

@@ -1,18 +1,18 @@
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('João Silva', 1001, 'Ciência da Computação', 'joaosilva', 'senha123');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Maria Santos', 1002, 'Engenharia de Software', 'msantos', 'senha456');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Pedro Oliveira', 1003, 'Sistemas de Informação', 'poliveira', 'senha789');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Ana Souza', 1004, 'Análise e Desenvolvimento de Sistemas', 'anasouza', 'senhaABC');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Lucas Costa', 1005, 'Segurança da Informação', 'lucascosta', 'senhaDEF');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Fernanda Lima', 1006, 'Banco de Dados', 'fernandalima', 'senhaGHI');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Gabriel Pereira', 1007, 'Redes de Computadores', 'gabrielpereira', 'senhaJKL');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Juliana Rodrigues', 1008, 'Inteligência Artificial', 'julianarodrigues', 'senhaMNO');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Rafaela Martins', 1009, 'Desenvolvimento Web', 'rafaelamartins', 'senhaPQR');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Thiago Santos', 1010, 'Gestão da Tecnologia da Informação', 'thiagosantos', 'senhaSTU');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Carolina Oliveira', 1011, 'Computação em Nuvem', 'carolinaoliveira', 'senhaVWX');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Marcelo Almeida', 1012, 'Programação de Jogos', 'marceloalmeida', 'senhaYZA');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Isabela Fernandes', 1013, 'Engenharia de Dados', 'isabelafernandes', 'senhaBCD');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Henrique Gomes', 1014, 'Arquitetura de Software', 'henriquegomes', 'senhaEFG');
-INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Camila Costa', 1015, 'Administração de Banco de Dados', 'camilacosta', 'senhaHIJ');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('João Silva', 'Ciência da Computação', 'joaosilva', 'senha123');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Maria Santos', 'Engenharia de Software', 'msantos', 'senha456');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Pedro Oliveira', 'Sistemas de Informação', 'poliveira', 'senha789');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Ana Souza', 'Análise e Desenvolvimento de Sistemas', 'anasouza', 'senhaABC');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Lucas Costa', 'Segurança da Informação', 'lucascosta', 'senhaDEF');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Fernanda Lima', 'Banco de Dados', 'fernandalima', 'senhaGHI');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Gabriel Pereira', 'Redes de Computadores', 'gabrielpereira', 'senhaJKL');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Juliana Rodrigues', 'Inteligência Artificial', 'julianarodrigues', 'senhaMNO');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Rafaela Martins', 'Desenvolvimento Web', 'rafaelamartins', 'senhaPQR');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Thiago Santos', 'Gestão da Tecnologia da Informação', 'thiagosantos', 'senhaSTU');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Carolina Oliveira', 'Computação em Nuvem', 'carolinaoliveira', 'senhaVWX');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Marcelo Almeida', 'Programação de Jogos', 'marceloalmeida', 'senhaYZA');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Isabela Fernandes', 'Engenharia de Dados', 'isabelafernandes', 'senhaBCD');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Henrique Gomes', 'Arquitetura de Software', 'henriquegomes', 'senhaEFG');
+INSERT INTO aluno (nome, curso, login, senha) VALUES ('Camila Costa', 'Administração de Banco de Dados', 'camilacosta', 'senhaHIJ');
 
 
 INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('João Silva', 'joao_silva', 'senha123', 1);

@@ -2,7 +2,6 @@ DROP TABLE aluno;
 CREATE TABLE aluno(
 	id int unsigned not null auto_increment,
 	nome varchar(100) not null,
-    matricula int not null,
     curso varchar(100) not null,
 	login varchar(20),
 	senha varchar(20),

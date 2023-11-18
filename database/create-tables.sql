@@ -1,7 +1,6 @@
 CREATE TABLE aluno(
 	id int not null unique auto_increment,
 	nome varchar(100) not null,
-    matricula int not null unique,
     curso varchar(100) not null,
 	login varchar(20) not null unique,
 	senha varchar(20) not null,
