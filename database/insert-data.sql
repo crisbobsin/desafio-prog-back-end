@@ -1,20 +1,78 @@
-INSERT INTO aluno(id, nome, matricula, curso, login, senha) VALUES(01, 'Eduarda Rosseto', 159951, 'Sistemas para internet', 'eduarda', 123 );
-INSERT INTO aluno(id, nome, matricula, curso, login, senha) VALUES(02, 'Felipe Menegás', 147852, 'Análise e desenvolvimento de sistemas', 'felipe', 456);
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('João Silva', 1001, 'Ciência da Computação', 'joaosilva', 'senha123');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Maria Santos', 1002, 'Engenharia de Software', 'msantos', 'senha456');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Pedro Oliveira', 1003, 'Sistemas de Informação', 'poliveira', 'senha789');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Ana Souza', 1004, 'Análise e Desenvolvimento de Sistemas', 'anasouza', 'senhaABC');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Lucas Costa', 1005, 'Segurança da Informação', 'lucascosta', 'senhaDEF');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Fernanda Lima', 1006, 'Banco de Dados', 'fernandalima', 'senhaGHI');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Gabriel Pereira', 1007, 'Redes de Computadores', 'gabrielpereira', 'senhaJKL');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Juliana Rodrigues', 1008, 'Inteligência Artificial', 'julianarodrigues', 'senhaMNO');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Rafaela Martins', 1009, 'Desenvolvimento Web', 'rafaelamartins', 'senhaPQR');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Thiago Santos', 1010, 'Gestão da Tecnologia da Informação', 'thiagosantos', 'senhaSTU');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Carolina Oliveira', 1011, 'Computação em Nuvem', 'carolinaoliveira', 'senhaVWX');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Marcelo Almeida', 1012, 'Programação de Jogos', 'marceloalmeida', 'senhaYZA');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Isabela Fernandes', 1013, 'Engenharia de Dados', 'isabelafernandes', 'senhaBCD');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Henrique Gomes', 1014, 'Arquitetura de Software', 'henriquegomes', 'senhaEFG');
+INSERT INTO aluno (nome, matricula, curso, login, senha) VALUES ('Camila Costa', 1015, 'Administração de Banco de Dados', 'camilacosta', 'senhaHIJ');
 
 
-INSERT INTO professor(id, nome_professor, login, senha, admin) VALUES(11, 'Angelito Rodrigues', 'angelito', 123, 1);
-INSERT INTO professor(id, nome_professor, login, senha, admin) VALUES(12, 'Cristina Bobsin', 'cristina', 456, 1);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('João Silva', 'joao_silva', 'senha123', 1);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Maria Santos', 'maria_santos', 'abcde456', 0);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Pedro Oliveira', 'pedro_oliveira', 'p@ssw0rd', 1);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Ana Costa', 'ana_costa', 'qwerty789', 0);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Carlos Pereira', 'carlos_pereira', '987654', 1);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Lúcia Fernandes', 'lucia_fernandes', 'senha1234', 0);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Rafaela Marques', 'rafaela_marques', 'abcdefg', 1);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Fernando Souza', 'fernando_souza', 'hijklmn', 0);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Patrícia Lima', 'patricia_lima', 'lima123', 1);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Gustavo Torres', 'gustavo_torres', 'senha4321', 0);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Carla Mendes', 'carla_mendes', 'senha12345', 1);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Mariana Costa', 'mariana_costa', 'costa123', 0);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Lucas Fernandes', 'lucas_fernandes', 'senha54321', 1);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Isabela Oliveira', 'isabela_oliveira', 'oliveira456', 0);
+INSERT INTO professor (nome_professor, login, senha, admin) VALUES ('Ricardo Santos', 'ricardo_santos', 'santos789', 1);
 
 
-INSERT INTO disciplina(id, nome) VALUES(02, 'Programação Back-end');
-INSERT INTO disciplina(id, nome) VALUES(03, 'Banco de Dados');
+INSERT INTO disciplina (nome) VALUES ('Introdução à Programação');
+INSERT INTO disciplina (nome) VALUES ('Banco de Dados');
+INSERT INTO disciplina (nome) VALUES ('Redes de Computadores');
+INSERT INTO disciplina (nome) VALUES ('Desenvolvimento Web');
+INSERT INTO disciplina (nome) VALUES ('Segurança da Informação');
+INSERT INTO disciplina (nome) VALUES ('Inteligência Artificial');
+INSERT INTO disciplina (nome) VALUES ('Análise e Projeto de Sistemas');
+INSERT INTO disciplina (nome) VALUES ('Engenharia de Software');
+INSERT INTO disciplina (nome) VALUES ('Sistemas Operacionais');
+INSERT INTO disciplina (nome) VALUES ('Programação Avançada');
+INSERT INTO disciplina (nome) VALUES ('Gestão de Projetos de TI');
+INSERT INTO disciplina (nome) VALUES ('Computação em Nuvem');
+INSERT INTO disciplina (nome) VALUES ('Ética e Legislação em TI');
+INSERT INTO disciplina (nome) VALUES ('Internet das Coisas');
+INSERT INTO disciplina (nome) VALUES ('Big Data e Analytics');
 
 
-INSERT INTO turma(numero_turma, turno, id_professor, id_disciplina) VALUES(11, 23, 11, 02);
-INSERT INTO turma(numero_turma, turno, id_professor, id_disciplina) VALUES(12, 33, 12, 03);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 1, 1);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 2, 2);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 3, 3);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 4, 4);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 5, 5);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 6, 6);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 7, 7);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 8, 8);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 9, 9);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 10, 10);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 1, 11);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 2, 12);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 3, 1);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 4, 2);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 5, 3);
 
 
-INSERT INTO inscricoes(id, id_aluno, numero_turma) VALUES(35, 01, 11);
-INSERT INTO inscricoes(id, id_aluno, numero_turma) VALUES(36, 02, 11);
-
-DELETE FROM aluno WHERE id = 2;
+INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (1, 1);
+INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (2, 2);
+INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (3, 3);
+INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (4, 4);
+INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (5, 5);
+INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (6, 6);
+INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (7, 7);
+INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (8, 8);
+INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (9, 9);
+INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (10, 10);

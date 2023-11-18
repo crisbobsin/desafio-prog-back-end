@@ -1,30 +1,30 @@
 CREATE TABLE aluno(
-	id int unique unsigned not null auto_increment,
+	id int not null unique auto_increment,
 	nome varchar(100) not null,
-    matricula unique int not null,
+    matricula int not null unique,
     curso varchar(100) not null,
-	login unique varchar(20) not null,
+	login varchar(20) not null unique,
 	senha varchar(20) not null,
     PRIMARY KEY (id)
 );
 
 CREATE TABLE professor(
-    id int unsigned not null auto_increment,
+    id int unsigned not null unique auto_increment,
     nome_professor varchar(100) not null,
-	login varchar(20) not null,
+	login varchar(20) not null unique,
 	senha varchar(20) not null,
     admin boolean default 1,
     PRIMARY KEY (id)
 );
 
 CREATE TABLE disciplina(
-    id int unsigned not null auto_increment,
+    id int unsigned not null unique auto_increment,
     nome varchar(100) not null,
     PRIMARY KEY (id)
 );
 
 CREATE TABLE turma(
-    numero_turma int,
+    numero_turma int not null unique auto_increment,
     turno int,
     id_professor int unsigned not null,
     id_disciplina int unsigned not null,
@@ -34,8 +34,8 @@ CREATE TABLE turma(
 );
 
 CREATE TABLE inscricoes(
-    id int unsigned not null auto_increment,
-    id_aluno int unsigned not null,
+    id int unsigned not null unique auto_increment,
+    id_aluno int not null,
     numero_turma int,
     PRIMARY KEY (id),
     CONSTRAINT fk_aluno_id_aluno FOREIGN KEY (id_aluno) REFERENCES aluno (id),
