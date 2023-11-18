@@ -15,6 +15,16 @@ const checkClasses = async (req, res) => {
 
 };
 
+const getClasses = async (req, res) => {
+    const turmas = await turmaModel.readAll();
+    return res.status(200).json(turmas);
+};
+
+const createClass = async (req, res) => {
+    turmaModel.createSingle(req.body);
+    return res.status(200).json({ message: "ok" });
+};
+
 const updateSchedule = async (req, res) => {
 
     const user_id = req.userId;
@@ -22,7 +32,7 @@ const updateSchedule = async (req, res) => {
     const checkAdmin = await loginController.verifyAdmin(user_id, user_login);
 
     if(checkAdmin){
-        turmaModel.updateProfessor(req.body);
+        turmaModel.updateSchedule(req.body);
         return res.status(201).json({ message: "ok"});
     } else {
         return res.status(401).json({ message: 'Apenas Admins podem atualizar o horário de uma turma' })
@@ -36,7 +46,7 @@ const updateProfessor = async (req, res) => {
     const checkAdmin = await loginController.verifyAdmin(user_id, user_login);
 
     if(checkAdmin){
-        turmaModel.del(req.query.id);
+        turmaModel.updateProfessor(req.body);
         return res.status(200).json({ message: "ok"});
     } else {
         return res.status(401).json({ message: 'Apenas Admins podem atualizar o professor de uma turma' })
@@ -74,6 +84,8 @@ const deleteClass = async (req, res) => {
 
 module.exports = {
     checkClasses,
+    getClasses,
+    createClass,
     updateSchedule,
     updateProfessor,
     deleteClass

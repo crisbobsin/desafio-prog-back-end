@@ -13,7 +13,7 @@ CREATE TABLE professor(
     nome_professor varchar(100) not null,
 	login varchar(20) not null,
 	senha varchar(20) not null,
-    admin boolean default 1
+    admin boolean default 1,
     PRIMARY KEY (id)
 );
 
