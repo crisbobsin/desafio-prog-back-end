@@ -25,11 +25,13 @@ router.delete('/cancelar-inscricao', loginController.verifyJwt, inscricaoControl
 
 router.get('/ver-disciplinas', loginController.verifyJwt, disciplinaController.getAll);
 router.post('/criar-disciplina', loginController.verifyJwt, disciplinaController.addSingle);
-router.delete('/cancelar-disciplina', loginController.verifyJwt, disciplinaController.deleteSingle);
+router.delete('/deletar-disciplina', loginController.verifyJwt, disciplinaController.deleteSingle);
 
-router.get('/turmas', loginController.verifyJwt,  turmaController.checkClasses);
+router.get('/turmas-usuario', loginController.verifyJwt,  turmaController.checkClasses);
 router.delete('/deletar-turma', loginController.verifyJwt, turmaController.deleteClass)
 router.post('/atualizar-turno-turma', loginController.verifyJwt, turmaController.updateSchedule);
 router.post('/atualizar-professor-turma', loginController.verifyJwt, turmaController.updateProfessor);
+router.get('/ver-turmas', loginController.verifyJwt, turmaController.getClasses);
+router.post('/criar-turma', loginController.verifyJwt, turmaController.createClass);
 
 module.exports = router;

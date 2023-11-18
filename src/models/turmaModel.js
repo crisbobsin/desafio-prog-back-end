@@ -45,15 +45,28 @@ const Turmas = {
 
     },
 
-    updateSchedule: (turma, _callback) => {
+    readAll: () => {
+        return db.query(`
+            SELECT disciplina.nome, turma.numero_turma, turma.turno
+            FROM turma
+            LEFT JOIN disciplina
+            ON turma.id_disciplina = disciplina.id
+        `);
+    },
 
+    createSingle: (turma) => {
+        return db.query("INSERT INTO turma(numero_turma, turno, id_professor, id_disciplina) VALUES(?,?,?,?);",
+            [ turma.numero_turma, turma.turno, turma.id_professor, turma.id_disciplina ]
+        );
+    },
+
+    updateSchedule: (turma) => {
         db.query("UPDATE turma SET turno = ? WHERE numero_turma = ?",
             [ turma.turno, turma.numero_turma ]);
     
     },
 
-    updateProfessor: (turma, _callback) => {
-
+    updateProfessor: (turma) => {
         db.query("UPDATE turma SET id_professor = ? WHERE numero_turma = ?",
             [ turma.id_professor, turma.numero_turma ]);
 
