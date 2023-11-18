@@ -2,42 +2,43 @@
 
 | Descrição                                     | Método | Rota                | Body |
 | --------------------------------------------- | ------ | ------------------- | ---- |
-| Criação de perfil (Apenas Admin)              | POST   | /criar-aluno        |      |
-| Ver turmas e matérias em que está matriculado | GET    | /turmas             |      |
+| Criação de perfil (Apenas Admin)              | POST   | /criar-aluno        |      | OK
+| Ver turmas e matérias em que está matriculado | GET    | /turmas             |      | OK
 
 
 - Perfil
 
 | Descrição                                     | Método | Rota       | Body |
 | --------------------------------------------- | ------ | ---------- | ---- |
-| Visualização de perfil                        | GET    | /perfil    |      |
+| Visualização de perfil                        | GET    | /perfil    |      | OK
 
 - Login
 
 | Descrição                                     | Método | Rota       | Body |
 | --------------------------------------------- | ------ | ---------- | ---- |
-| Login                                         | POST   | /login     |      |
+| Login                                         | POST   | /login     |      | OK
 
 - Professores
 
 | Descrição                           | Método | Rota       | Body |
 | ----------------------------------- | ------ | ---------- | ---- |
-| Criação de professor (Apenas Admin) | POST   | /professor |      |
-| Criação de turmas                   | POST   | /turma     |      |
-| Deletar turmas                      | DELETE | /turma     |      |
-| Alterar turmas                      | PUT    | /turma     |      |
-| Acessar a turma e ver informações   | GET    | /inscricao |      |
+| Criação de turmas                   | POST   | /turma     |      | OK
+| Deletar turmas                      | DELETE | /turma     |      | OK
+| Alterar turmas                      | PUT    | /turma     |      | OK
+| Acessar a turma e ver informações   | GET    | /inscricao |      | OK
 
 - Inscrições
 
 | Descrição                                   | Método | Rota                | Body |
 | ------------------------------------------- | ------ | ------------------- | ---- |
-| Aluno logado deve se inscrever em uma turma | POST   | /inscricao          |      |
-| Remover inscrições em turmas 				  | DELETE | /cancelar-inscricao |      |
+| Aluno logado deve se inscrever em uma turma | POST   | /inscricao          |      | OK
+| Remover inscrições em turmas 				  | DELETE | /cancelar-inscricao |      | OK
 
 - Disciplinas
 
 | Descrição                                   | Método | Rota        | Body |
 | ------------------------------------------- | ------ | ----------- | ---- |
-| Ver as disciplinas                          | POST   | /disciplina |      |
-| Ver as turmas de cada disciplina            | GET    | /turma      |      |
+| Criar disciplinas                           | POST   | /disciplina |      | OK
+| Deletar disciplinas                         | POST   | /disciplina |      | OK
+| Ver as disciplinas                          | POST   | /disciplina |      | OK
+| Ver as turmas de cada disciplina            | GET    | /turma      |      | OK

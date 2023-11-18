@@ -1,1 +1,1 @@
-Optamos por criar uma pasta models para armazenas arquivos de acesso ao banco de dados
+Optamos por criar uma pasta models para armazenar arquivos de acesso ao banco de dados
