@@ -16,7 +16,7 @@ const checkClasses = async (req, res) => {
 
 const getClasses = async (req, res) => {
     const turmas = await turmaModel.readAll();
-    return res.status(200).json(turmas);
+    return res.status(200).json(turmas[0]);
 };
 
 const createClass = async (req, res) => {
