@@ -6,7 +6,7 @@ const profile = {
     getProfile: async (user_id, user_login, _callback) => {
         
         const aluno = await db.query('SELECT nome, curso, login FROM aluno WHERE id=(?) AND login = (?)', [user_id, user_login]);
-        const professor = await db.query('SELECT nome, login, admin FROM professor WHERE id=(?) AND login = (?)', [user_id, user_login]);
+        const professor = await db.query('SELECT nome_professor, login, admin FROM professor WHERE id=(?) AND login = (?)', [user_id, user_login]);
 
         if (aluno[0].length > 0) {
             console.log('Teste perfil aluno ' + aluno[0][0])

@@ -49,21 +49,21 @@ INSERT INTO disciplina (nome) VALUES ('Internet das Coisas');
 INSERT INTO disciplina (nome) VALUES ('Big Data e Analytics');
 
 
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 1, 1);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 2, 2);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 3, 3);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 4, 4);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 5, 5);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 6, 6);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 7, 7);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 8, 8);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 9, 9);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 10, 10);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 1, 11);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 2, 12);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 3, 1);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (2, 4, 2);
-INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (1, 5, 3);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (13, 1, 1);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (22, 2, 2);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (11, 3, 3);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (22, 4, 4);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (13, 5, 5);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (22, 6, 6);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (11, 7, 7);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (22, 8, 8);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (13, 9, 9);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (22, 10, 10);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (11, 1, 11);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (22, 2, 12);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (13, 3, 1);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (22, 4, 2);
+INSERT INTO turma (turno, id_professor, id_disciplina) VALUES (11, 5, 3);
 
 
 INSERT INTO inscricoes (id_aluno, numero_turma) VALUES (1, 1);

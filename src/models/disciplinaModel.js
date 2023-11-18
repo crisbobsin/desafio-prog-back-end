@@ -4,8 +4,8 @@ var Disciplinas = {
 
     create: (disciplina, callback) => {
 
-        db.query("INSERT INTO disciplina (id, nome) VALUES (?,?)",
-            [ disciplina.id, disciplina.nome ], 
+        db.query("INSERT INTO disciplina (nome) VALUES (?)",
+            [ disciplina.nome ], 
             callback);
     },
     read: () => {
