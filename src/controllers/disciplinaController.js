@@ -3,7 +3,7 @@ const loginController = require('./loginController');
 
 const getAll = async (req, res) => { 
     const disciplinas = await disciplinaModel.read();
-    return res.status(200).json(disciplinas);
+    return res.status(200).json(disciplinas[0]);
 };
 
 const addSingle = async (req, res) => {
