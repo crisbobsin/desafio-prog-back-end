@@ -24,8 +24,11 @@ router.post('/login', loginController.login);
 router.get('/turmas', loginController.verifyJwt,  turmaController.checkClasses);
 router.post('/inscrever', loginController.verifyJwt, inscricaoController.subscribeClass);
 
-router.get('/disciplina', disciplinaController.getAll);
-router.post('/disciplina', disciplinaController.addSingle);
-router.delete('/disciplina', disciplinaController.deleteSingle);
+router.get('/ver-disciplinas', loginController.verifyJwt, disciplinaController.getAll);
+router.post('/criar-disciplina', loginController.verifyJwt, disciplinaController.addSingle);
+router.delete('/cancelar-disciplina', loginController.verifyJwt, disciplinaController.deleteSingle);
+
+router.post('/atualizar-turno-turma', loginController.verifyJwt, turmaController.updateSchedule);
+router.post('/atualizar-professor-turma', loginController.verifyJwt, turmaController.updateProfessor);
 
 module.exports = router;
