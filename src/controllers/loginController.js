@@ -16,6 +16,7 @@ const verifyJwt = (req, res, next) => {
         } else {
             req.userId = decoded.userId;
             req.userLogin = decoded.userLogin;
+            req.userRegistration = decoded.userRegistration;
             next();
         }
 
@@ -53,7 +54,7 @@ const login = async (req, res) => {
     if (resultadoLogin) {
         /* Função sign recebe um payload (Dados contidos no próprio token que contém informações do usuário),
         o secret de autenticação e um outro parâmetro que informa o tempo em que o token ficará ativo */
-        const token = jwt.sign({ userId: resultadoLogin.id, userLogin: resultadoLogin.login }, auth_secret, { expiresIn: '9999 years' })
+        const token = jwt.sign({ userId: resultadoLogin.id, userLogin: resultadoLogin.login, userRegistration: resultadoLogin.matricula }, auth_secret, { expiresIn: '9999 years' })
         return res.status(200).json({ auth: true, token });
     } else {
         return res.status(401).json({ mensagem: 'Credenciais inválidas' });

@@ -9,10 +9,10 @@ const profile = {
         const professor = await db.query('SELECT nome, login, admin FROM professor WHERE id=(?) AND login = (?)', [user_id, user_login]);
 
         if (aluno[0].length > 0) {
-            console.log('aluno ' + aluno[0][0])
+            console.log('Teste perfil aluno ' + aluno[0][0])
             return aluno[0][0]
         } else if (professor[0].length > 0) {
-            console.log('Professor ' + professor[0][0])
+            console.log('Teste Perfil Professor ' + professor[0][0])
             return professor[0][0]
         } else {
             console.log('Erro')
