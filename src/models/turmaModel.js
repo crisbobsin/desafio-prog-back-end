@@ -12,7 +12,7 @@ const Turmas = {
         if (isStudent[0].length > 0) {
 
             const query = `
-                SELECT inscricoes.id, turma.numero_turma, turma.turno, disciplina.nome, professor.nome 
+                SELECT inscricoes.id, turma.numero_turma, turma.turno, disciplina.nome, professor.nome_professor 
                 FROM inscricoes 
                 LEFT JOIN turma 
                 ON inscricoes.numero_turma = turma.numero_turma 
@@ -55,8 +55,8 @@ const Turmas = {
     },
 
     createSingle: (turma) => {
-        return db.query("INSERT INTO turma(numero_turma, turno, id_professor, id_disciplina) VALUES(?,?,?,?);",
-            [ turma.numero_turma, turma.turno, turma.id_professor, turma.id_disciplina ]
+        return db.query("INSERT INTO turma(turno, id_professor, id_disciplina) VALUES(?,?,?,?);",
+            [ turma.turno, turma.id_professor, turma.id_disciplina ]
         );
     },
 
