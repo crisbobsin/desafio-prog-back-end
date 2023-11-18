@@ -20,8 +20,16 @@ const getClasses = async (req, res) => {
 };
 
 const createClass = async (req, res) => {
-    turmaModel.createSingle(req.body);
-    return res.status(200).json({ message: "ok" });
+    const user_id = req.userId;
+    const user_login = req.userLogin;
+    const checkAdmin = await loginController.verifyAdmin(user_id, user_login);
+
+    if(checkAdmin){   
+        turmaModel.createSingle(req.body);
+        return res.status(200).json({ message: "ok" });
+    } else{
+        return res.status(401).json({ message: 'Apenas Admins podem criar uma turma' })
+    }
 };
 
 const updateSchedule = async (req, res) => {

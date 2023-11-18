@@ -55,7 +55,7 @@ const Turmas = {
     },
 
     createSingle: (turma) => {
-        return db.query("INSERT INTO turma(turno, id_professor, id_disciplina) VALUES(?,?,?,?);",
+        return db.query("INSERT INTO turma(turno, id_professor, id_disciplina) VALUES(?,?,?);",
             [ turma.turno, turma.id_professor, turma.id_disciplina ]
         );
     },

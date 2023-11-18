@@ -12,10 +12,20 @@ var Disciplinas = {
 
         return db.query('SELECT * FROM disciplina');
     },
-    del: (id, callback) => {
-        db.query("DELETE FROM disciplina WHERE id = (?)",
-            [ id ], 
-            callback);
+
+    del: async (id) => {
+
+        try {
+
+            await db.query("DELETE FROM disciplina WHERE id = (?)",
+            [ id ])
+            return true
+
+        } catch (error) {
+
+            return false
+            
+        } 
     }
 };
 
